@@ -6,6 +6,7 @@ export type ScaffoldConfig = {
   alchemyApiKey: string;
   walletConnectProjectId: string;
   onlyLocalBurnerWallet: boolean;
+  ponderUrl: string;
 };
 
 const scaffoldConfig = {
@@ -30,6 +31,9 @@ const scaffoldConfig = {
 
   // Only show the Burner Wallet when running on hardhat network
   onlyLocalBurnerWallet: true,
+
+  // The URL of the ponder server
+  ponderUrl: process.env.NEXT_PUBLIC_PONDER_URL || "http://localhost:42069",
 } as const satisfies ScaffoldConfig;
 
 export default scaffoldConfig;
